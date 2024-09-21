@@ -1,21 +1,17 @@
-//Шаблонные строки
+//Преобразование типов
 
-const projectName = 'Сайт магазина';
-const price = 2000;
-const author = 'Василий Пупкин';
+const age = '18';
+console.log(age + 5); // 185
+console.log(Number(age) + 5); //23    Number(?)
+console.log(age - 3); // минус, умножение, деление - думает что всегда цифры)
+const userName = 'Вася';
+console.log(userName + 5);
+console.log(Number(userName) + 5); //не число, ошибка NaN
+console.log(typeof NaN);
+console.log(String(4) + 7) // Строка 4 + цифра 7 = всегда думает что String + string = 47
+console.log(Boolean(0)); // все что не 0 - true
+console.log(Boolean('')); // false = строка пустая
+console.log(true + 2) // true = 1, 1 +2 = 3
 
-const template = author + ' заказал ' + projectName + ' по цене ' + price + '$';
-console.log(template);
-
-const template2 = `${author} заказал ${projectName} по цене ${price}$` // если ковычки ` то можно печатать без конкатинации (плюс, и пробелов) 
-console.log(template2);
-
-
-
-const template3 = 'Проект \n' + 'Цена: ' + price + '$';
-console.log(template3);
-
-
-const template4 =`Проект
-Цена: ${price}`;
-console.log(template4);
+const a = 2 + '10';
+console.log(a - 10);
