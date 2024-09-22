@@ -1,61 +1,26 @@
-// Switch
+// Тернарные операторы
+const bmwX3Price = 100000;
+const fordFocusPrice = 10000;
+const budget = 20000;
 
-const role = prompt('Введите должность'); 
-
-/*
-if (role === 'manager') {
-    console.log('Менеджер');
+/*let message;
+if (budget > bmwX3Price) {
+     message = "BMW";
+} else {
+     message = 'Велосипед';
 }
-else if (role === 'admin') {
-    console.log('Админ');
-}
-else if (role === 'CEO') {
-    console.log('СЕО');
-}
-else {
-    console.log('Мы тебя не знаем');
-}*/
-/*
-switch (role) {
-    case 'manager':
-        console.log('Менеджер');
-        break;
-    case 'admin':
-        console.log('Админ');
-        break;
-    case 'ceo': //role === 'CEO'
-        console.log('СЕО');
-        break;
-    default: 
-        console.log('Мы тебя не знаем');
-        break;
+const message = budget > bmwX3Price ? message = "BMW" : message = 'Велосипед'
+console.log (`Я хочу купить ${message}`)*/
 
-}*/
 
-switch (role) {
-    case 'manager':
-    case 'admin':
-        console.log('Не руководитель');
-        break;
-    case 'ceo': //role === 'CEO'
-        console.log('Руководитель');
-        break;
-    default: 
-        console.log('Мы тебя не знаем');
-        break;
+// Тернарные операторы
 
-}
+const send =  
+budget > bmwX3Price // if
+? "BMW" // вариант 1
+: budget > fordFocusPrice  // else if
+? "Ford"  // вариант 2
+: 'Велосипед' // else
 
-const num = 10;
 
-switch (true) {
-    case num>0:
-        console.log('Положительный');
-        break;
-    case num<0:
-        consol3e.log('Отрицательный');
-        break;
-    default:
-        console.log('Ноль!')
-
-}
+console.log (`Я хочу купить ${send}`)
