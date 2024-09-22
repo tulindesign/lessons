@@ -1,15 +1,61 @@
-// операторы равенства
+// Switch
 
-const secretNumber = '7';
+const role = prompt('Введите должность'); 
 
-/* лучше не использовать
-if (secretNumber == 7) {
-    console.log('Угадал не строго'); // проверяет только значение
+/*
+if (role === 'manager') {
+    console.log('Менеджер');
+}
+else if (role === 'admin') {
+    console.log('Админ');
+}
+else if (role === 'CEO') {
+    console.log('СЕО');
+}
+else {
+    console.log('Мы тебя не знаем');
+}*/
+/*
+switch (role) {
+    case 'manager':
+        console.log('Менеджер');
+        break;
+    case 'admin':
+        console.log('Админ');
+        break;
+    case 'ceo': //role === 'CEO'
+        console.log('СЕО');
+        break;
+    default: 
+        console.log('Мы тебя не знаем');
+        break;
+
 }*/
 
+switch (role) {
+    case 'manager':
+    case 'admin':
+        console.log('Не руководитель');
+        break;
+    case 'ceo': //role === 'CEO'
+        console.log('Руководитель');
+        break;
+    default: 
+        console.log('Мы тебя не знаем');
+        break;
 
-const q = Number(prompt('Введите число')); 
-if (q === 7) { 
-    // ЛУЧШЕ ИСПОЛЬЗОВАТЬ это т..к Типизация и приведение к нужному типу перед результатом
-    console.log('Угадал');
+}
+
+const num = 10;
+
+switch (true) {
+    case num>0:
+        console.log('Положительный');
+        break;
+    case num<0:
+        consol3e.log('Отрицательный');
+        break;
+    default:
+        console.log('Ноль!')
+
 }
