@@ -1,31 +1,23 @@
-//Логические операторы
-// И - когда ВСЕ true
-// ИЛИ - когда хотябы 1 true
+// // Операторы с другими типами
 
-const isAdmin = true;
-const canWrite = true;
-let superAdmin;
-/*
-console.log(`Есть права на редактирование системных файлов ${isAdmin && canWrite ? 'Да' : 'Нет'}`); // И
+// console.log('Вася' || 'Олег'); // Вася, т.к ПЕРВЫЙ и если 
+// console.log(false || 'Олег'); // Олег, т.к. первый false 
+// console.log('Вася' || false); // Вася, т.к. первый / true
+// console.log(false || false); //false
 
 
-console.log(`Могу редактировать обычный файл (либо админ, либо есть права на редактирование) ${isAdmin || canWrite ? 'Да' : 'Нет'}`); // ИЛИ
+// console.log('Вася' && 'Олег'); // Олег, т.к. он последний 
+// console.log(false && 'Олег'); //false, т.к. есть хотябы 1 false
+// console.log(false && 'Олег'); //false, т.к. есть хотябы 1 false
+// console.log(false && false); //false
 
 
-console.log(`Все остальные пользователи НЕ админы - ${!isAdmin ? 'Да' : 'нет'}`); // Инверсия
-*/
+let a;
+const userName = a || 'Петя';
+console.log(userName); // Петя, т.к. a = undefined
 
-console.log(`Системный файл;
-Есть доступ к редактированию -  ${canWrite == true ? 'Да': 'Нет'}`);
+const isAdmin = prompt('Вы админ? Да(1) Нет (0)');
+ 
 
-let isEdited = prompt('Файл редактируется? Да (1) или Нет(0)');
-
-if (isEdited == 1) {
-    SuperAdmin = prompt('Вы супер админ? Да(1) Нет (0)');
-
-    console.log(SuperAdmin == 1 ? `Можно редактировать любой файл, т.к. вы СуперАдмин` : `На текущий момент редактировать - ${isAdmin && canWrite && Boolean(!(isEdited == 1 ? true : false)) ? 'Можно' : 'Нельзя'}`);
-
-
-} else {
-    console.log(`На текущий момент редактировать - ${isAdmin && canWrite && Boolean(!(isEdited == 1 ? true : false)) ? 'Можно' : 'Нельзя'}`);
-}
+const fileName = (isAdmin == Boolean(1) ? true : false) && 'file.mp4';
+console.log(fileName); // file.mp4 
