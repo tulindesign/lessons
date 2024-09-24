@@ -1,19 +1,21 @@
-// Параметры по умолчанию
+// Условие в функции
 
-// function toPower(num = 4, power = 5) {
-//     const res = num ** power;
-//     return res;
+// function canAccessWebsite(age = prompt('сколько лет')) {
+//    text = age >= 18 ? 'Go':"No";
+//     return text;
 // }
-// console.log(toPower(2,3));
-// console.log(toPower(2));
-
-// const num = num ?? 10 - значение 10 если undefined или null
+// console.log(canAccessWebsite());
 
 
-function toPower(num = prompt('Какое у вас число?'), power = prompt('В какую степерь возвести?')) {
-    const res = num ** power;
-    return res;
-}
-console.log(toPower(2,3));
-console.log(toPower(22));
-console.log(toPower());
+
+
+// function canAccessWebsite(age = prompt('сколько лет')) {
+//   return (age >= 18) ? true:false;
+//  }
+//  console.log(canAccessWebsite() === true ? 'Go': 'No');
+
+
+
+ const canAccessWebsiteArrow = (age = prompt('Ваш возраст')) => {return age >= 18};
+ 
+ console.log(canAccessWebsiteArrow() === true ? 'Доступ разрешен': 'Нет доступа');
