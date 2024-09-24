@@ -1,21 +1,18 @@
-// Условие в функции
+// Функции в функциях
 
-// function canAccessWebsite(age = prompt('сколько лет')) {
-//    text = age >= 18 ? 'Go':"No";
-//     return text;
-// }
-// console.log(canAccessWebsite());
+const KG_IN_USD = 7;
+const KM_IN_USD = 5;
 
+function calcW(present) {
+    return present * KG_IN_USD;
+}
+function calcKM(distance) {
+    return distance * KM_IN_USD;
+}
 
-
-
-// function canAccessWebsite(age = prompt('сколько лет')) {
-//   return (age >= 18) ? true:false;
-//  }
-//  console.log(canAccessWebsite() === true ? 'Go': 'No');
-
-
-
- const canAccessWebsiteArrow = (age = prompt('Ваш возраст')) => {return age >= 18};
- 
- console.log(canAccessWebsiteArrow() === true ? 'Доступ разрешен': 'Нет доступа');
+function getExchangePrice(present1, present2, distance) {
+    console.log(`Сумма КГ подарков в $ = ${calcW(present1+present2)}`);
+    console.log(`Дистанция в $ = ${calcKM(distance)}`)
+    return calcW(present1+present2) + calcKM(distance);;
+}
+console.log(getExchangePrice(1,2,10));
