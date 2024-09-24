@@ -1,20 +1,10 @@
-// Стрелочные функции
+// Переписать функции в стрелочную 
 
-function powerOfTwo(num) {
-    return num ** 2;
+function toPower(num, power) {
+    const res = num ** power;
+    return res;
 }
-console.log(powerOfTwo(5));
+console.log(toPower(2,3));
 
-
-const poft = (num) => num ** 2 ;
-console.log(poft(6));
-
-
-
-const poft2 = num => {
-    console.log(num);
-    return num ** 2 ;
-}
-console.log(poft2(6));
-
-
+const toP = (num, power) => num ** power;
+console.log(toP(2,3));
