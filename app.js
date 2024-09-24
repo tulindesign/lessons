@@ -1,13 +1,20 @@
-// Анонимные функции
+// Стрелочные функции
 
-console.log(powerOfTwo(2));
 function powerOfTwo(num) {
-    return num ** 2 ;
-} // можем использовать ДО самой объявления самой фукнции в коде
+    return num ** 2;
+}
+console.log(powerOfTwo(5));
 
 
-const poft = function (num) {
+const poft = (num) => num ** 2 ;
+console.log(poft(6));
+
+
+
+const poft2 = num => {
+    console.log(num);
     return num ** 2 ;
 }
+console.log(poft2(6));
 
-console.log(poft(4)); //использщвание только ПОСЛЕ объявления переменной функции)
+
