@@ -1,42 +1,60 @@
-// Упражнение - проверка прав
-/* 
-ПОльзователь хочет приобрести игру в магазине. 
-Он может это сделать только если:
-- Его баланс больше 1000 (balance)
-или число бонусов больше 100 (bonusBalance)
-- Он не забанен (isBanned)
-- Игра не раскуплена (isExist)
-- Игра в продаже (isSelling)
+// // Введение в функции
+// function fromMilesToKm(miles) {
+//     const km = miles / 0.62137;
+//     return km;
+// }
 
-Напишите условие для покупки и выведите в консоль результат
+// /* 
+// Ключевое слово - function
+// Название fromMilesToKm
+// Аргумент(ы) ()
+// Возвращаемое значение return переменна;
+// */
 
-*/
-const gamePriceRub = 1000;
-const gamePriceBonus = 100;
-const gamePrice = gamePriceRub || gamePriceBonus;
-const isBanned = false;
-const isExist = true;
-const isSelling = true;
-let bonusBalance;
+// console.log(fromMilesToKm(100));
 
-console.log(`Продается игра
-    Стоимость: ${gamePriceRub} руб. / ${gamePriceBonus} бонусов.
-    В налиии и в продаже: ${(isExist || isSelling)? 'Да' : 'Нет'}.
-    Вы можете купить (не забанены): ${!isBanned ? 'Да' : 'Нет'}.
-    `);
 
-const balance = prompt('Сколько денег на балансе?');
+// function logName(firstname, surname) {
+//     console.log(`Мое имя ${firstname}
+// Моя фамилия ${surname}`);
+// }
+// logName(firstname = prompt('Ваше имя?'),surname = prompt('Ваше фамилия?')); 
 
-if (balance < gamePriceRub) { 
-    bonusBalance = prompt('Сколько бонусов?');
-    if (bonusBalance > gamePriceBonus) { 
-        console.log(`Можно купить за бонусоы, останется ${bonusBalance - gamePriceBonus}`); 
-    } else {
-        console.log(`Вам не хватает ${gamePriceBonus - bonusBalance} бонусов или ${gamePriceRub - balance} рублей`)
-    }
-} else {
-    console.log(`Можно купить, сдача ${balance - gamePriceRub}`); 
+// function logName(firstname, surname) {
+//     console.log(`Мое имя ${firstname}
+// Моя фамилия ${surname}`);
+// }
+// logName(prompt('Ваше имя?'),prompt('Ваше фамилия?')); 
+
+
+// function countDepositSum(depositInUsd, month, rate) {
+//     return sum = depositInUsd * (1 + (rate/100)/ 12) ** month;
+// }
+// console.log(countDepositSum(1000,24,7));
+// console.log(countDepositSum(2000,12,14));
+// console.log(countDepositSum(3000,24,7));
+
+
+
+
+// function countDepositSum(depositInUsd, month, rate) {
+//     const sum = depositInUsd * (1 + (rate/100)/12) ** month;
+//     console.log(`Сумма через ${month} месяца, с входными ${depositInUsd}$ и ставкой ${rate}% годовых = ${sum}$ `);
+//     return sum;
+
+// }
+// const countedDepositSum = countDepositSum(prompt('Сколько у вас денег'),prompt('Срок вклада в месяцах'),prompt('Ставка в %'));
+
+
+
+function countDepositSum(depositInUsd, month, rate) {
+    const sum = depositInUsd * (1 + (rate/100)/12) ** month;
+    return sum;
 }
+const depositInUsd = prompt('Сколько у вас денег');
+const month = prompt('Срок вклада в месяцах');;
+const rate = prompt('Ставка в %');
 
-//доп без логики
-console.log((balance > gamePriceRub || bonusBalance > gamePriceBonus) && !isBanned && isExist && isSelling ?'Пользак может купить':'Пользак не может купить');
+console.log(`Сумма через ${month} месяца, с входными ${depositInUsd}$ и ставкой ${rate}% годовых = ${countDepositSum(month,depositInUsd,rate)}$`);
+
+
