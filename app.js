@@ -1,34 +1,39 @@
-//Проверка на тип данных
+//знакомство с массивами
 
-function isString(message) {
-    return typeof(message) == 'string'
+const role1 = 'admin';
+const role2 = 'user';
+const role3 = 'superuser';
+
+const roles = [
+    'admin',
+    'user',
+    'superuser'
+];
+
+const userInfo = [
+    'Аня', 25
+];
+
+console.log(roles); // вывести массив
+console.log(roles[0]); //вывести первый
+console.log(roles.length); // длина массива
+console.log(roles[roles.length - 1]); //найти последний
+
+// смотреть на поддержку, новый вид, компактный но вопрос поддержки
+console.log(roles.at(0));
+console.log(roles.at(-1)); 
+
+const usersAge = [2040 - 2022, 20-'6'];
+console.log(usersAge);
+
+const usersAge2 = [2040 - 2022, 20 >'6'?'da':'no'];
+console.log(usersAge2);
+
+const userNames = new Array('Вася','Петя','Катя');
+console.log(userNames);
+
+function sqaure(el) {
+    return el**2;
 }
-console.log(isString('0'));
-console.log(isString(0));
-
-
-const isString2 = message2 => typeof(message2) == 'string'
-
-
-console.log(isString2('0'));
-console.log(isString2(0));
-
-
-// Функция в функции
-function isWater(waterML) {
-    return waterML >= 200
-}
-console.log(isWater(200));
-
-function isTea(teaBags) {
-    return teaBags >= 1;
-}
-console.log(isTea(200));
-
-
-function cupOfTea(waterML,teaBags) {
-    cupOfTeaCan = isWater(waterML)&&isTea(teaBags) ? console.log(`${waterML/100} Кружек чая ты можешь сделать`) : console.log('Чая сделать не получится')
-    return cupOfTeaCan;
-}
-
-cupOfTea(300,2);
+const usersAge3 = [10,20,30];
+console.log(sqaure(usersAge3[0]));
