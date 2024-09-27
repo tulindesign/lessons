@@ -1,21 +1,23 @@
-//поиск элемента в массиве
+const myChildren = [];
+myChildren.push('Mila'); //добавить последним
+myChildren.push('Alice'); //добавить последним
 
-const roles = ['user','admin','manager','admin'];
-
-const elIndex =  roles.indexOf('admin') // ищет первое вхождение
-console.log(elIndex);
-
-
-const elIndex2 =  roles.indexOf('superuser') // поиск, не найдено -1
-console.log(elIndex2);
-
-const question = prompt('Ваша роль?');
-const searchResult = roles.indexOf(String(question)) >=0 ? 'Доступ разрешен': 'нет доступа, роль не найдена';
-console.log(searchResult);
-// name.indexOf - проверяет наличие, индекс, или -1 если не найден
+console.log(myChildren); 
 
 
-const question2 = prompt('Ваша роль?');
-const searchResult2 = roles.includes(question2) ? 'Доступ разрешен': 'нет доступа, роль не найдена';
-console.log(searchResult2);
-// name.includes - проверяет наличие, возвращает true
+myChildren.unshift('Firstchild'); // добавить первого в массив
+console.log(myChildren); 
+myChildren.push('Last-child');
+console.log(myChildren); 
+
+// если нам надо вывести значение удаляемого то положить в переменную
+const delFirst =  myChildren.shift(); // удалит первого
+const delLast=  myChildren.pop(); // удалит последнего
+console.log(`Удалил ${delFirst}`); 
+console.log(`Удалил ${delLast}`); 
+console.log(myChildren); 
+
+
+
+console.log(myChildren.indexOf('Mila')>=0?'Мила родилась':'Мила еще не родилась') // возвращает индекс элемента если найден, или -1 если не найден
+console.log(myChildren.includes('Mila')?'Мила родилась':'Мила еще не родилась') // true или false
