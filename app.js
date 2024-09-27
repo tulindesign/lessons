@@ -1,23 +1,48 @@
-const myChildren = [];
-myChildren.push('Mila'); //добавить последним
-myChildren.push('Alice'); //добавить последним
+// Slice, Splice, concat, reverse
+const roles = ['users','admin','manager','superuser'];
 
-console.log(myChildren); 
+console.log(roles);
+
+/*
+slice - вырезает, но не изменяет исходный массив
+использовать например если нужно взять часть массива и куда-то положить
+*/
+const res = roles.slice(2); // срезать (N) элементов в начале
+console.log(res);
+
+const res2 = roles.slice(2,3); // срезать (N,X) элементов  N - первый элемент, X - последний, но не включая
+console.log(res2);
+
+const res3 = roles.slice(-1); // вырезать (-1) 1 с конца
+console.log(res3);
+
+const res4 = roles.slice(0,-1); // срезать от 0 до последнего (не включая)
+console.log(res4);
 
 
-myChildren.unshift('Firstchild'); // добавить первого в массив
-console.log(myChildren); 
-myChildren.push('Last-child');
-console.log(myChildren); 
-
-// если нам надо вывести значение удаляемого то положить в переменную
-const delFirst =  myChildren.shift(); // удалит первого
-const delLast=  myChildren.pop(); // удалит последнего
-console.log(`Удалил ${delFirst}`); 
-console.log(`Удалил ${delLast}`); 
-console.log(myChildren); 
+/*
+splice - вырезает в ИСХОДНОМ
+*/
+const res6 = roles.splice(1,3); // N - начальный индекс, X - количество - ДЛИНА
+console.log(res6);
+console.log(roles);
 
 
+/*
+reverse - делает инверсию в ИСХОДНОМ
+*/
+const food = ['apple','orange','banana','lemon'];
+console.log(food);
 
-console.log(myChildren.indexOf('Mila')>=0?'Мила родилась':'Мила еще не родилась') // возвращает индекс элемента если найден, или -1 если не найден
-console.log(myChildren.includes('Mila')?'Мила родилась':'Мила еще не родилась') // true или false
+const res9 = food.reverse(); 
+console.log(res9);
+
+/*
+concat - добавляет в массив в переменную, не в исходную
+*/
+const newfood = ['meat','fish'];
+const res10 = food.concat(newfood);
+console.log(res10);
+
+food.unshift(...newfood);
+console.log(food);
