@@ -1,39 +1,30 @@
-//знакомство с массивами
+// Управление элементами массива
+const users = ['Аня','Вика','Катя'];
+users[users.length -1] = 'Кристина'; // перезаписали 3 элемент массива
+console.log(users[users.length -1]);
 
-const role1 = 'admin';
-const role2 = 'user';
-const role3 = 'superuser';
 
-const roles = [
-    'admin',
-    'user',
-    'superuser'
-];
+users[users.length] = 'Никита'; // добавили никиту последним
+console.log(users[users.length -1]);
 
-const userInfo = [
-    'Аня', 25
-];
 
-console.log(roles); // вывести массив
-console.log(roles[0]); //вывести первый
-console.log(roles.length); // длина массива
-console.log(roles[roles.length - 1]); //найти последний
+const arrLenght = users.push('Игорь'); // добавить последним
+console.log(users);
+console.log(arrLenght);
 
-// смотреть на поддержку, новый вид, компактный но вопрос поддержки
-console.log(roles.at(0));
-console.log(roles.at(-1)); 
 
-const usersAge = [2040 - 2022, 20-'6'];
-console.log(usersAge);
+const arrLenght2 = users.unshift('Тимофей'); // добавить первым
+console.log(users);
+console.log(arrLenght2);
 
-const usersAge2 = [2040 - 2022, 20 >'6'?'da':'no'];
-console.log(usersAge2);
 
-const userNames = new Array('Вася','Петя','Катя');
-console.log(userNames);
+users.pop(); // удалил последний
+const arrLenght3 = users.pop();  // в отличии от добавления, возвращает удаленный элемент
+console.log(users);
+console.log(arrLenght3);
 
-function sqaure(el) {
-    return el**2;
-}
-const usersAge3 = [10,20,30];
-console.log(sqaure(usersAge3[0]));
+
+const el2 = users.shift();  // удалил последний
+// в отличии от добавления, возвращает удаленный элемент
+console.log(el2);
+console.log(users);
