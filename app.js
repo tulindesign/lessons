@@ -1,10 +1,7 @@
-// Деструктуризация
-const userData = ['Антон',18,'Москва'];
+// Оператор REST
 
-function getData() {
-    return ['Антон',18,'Москва'];
-}
+// ...name = ОСТАЛЬНОЕ (только до конца)
 
-const [userName, _, userCity ] = getData();
-
-console.log(userName,userCity);
+const data =[1,2,3,4,5,6]
+const [one,two, ...others] = data;
+console.log(one,two, others);
