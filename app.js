@@ -1,15 +1,17 @@
-// Упражнение - Цикл в обратном порядке
+// Цикл в цикле
+// for (let i=1; i<=4; i++) {
+//     console.log(`Цикл 1 - ${i}`);
+//     for (let j=1; j <5; j++) {
+//         console.log(`---цикл 2 - ${j}`);
+//     }
+// } 
 
-/* Задача вывести в консоль строку "Я люблю JS !" из массива.
-Проходя циклом в обратном порядке не используя метов revrese.
-*/
 
-const arr = ['!', 'JS', 'люблю', 'Я'];
+const tasks = [[1, 'Задача1'], [2,'Задача 2']];
 
-const newarr = [];
-
-for (i=arr.length-1; i>=0; i--) {
-    newarr.push(arr[i]);
+for (i = 0; i<tasks.length; i++) {
+    console.log(tasks[i]);
+    for (j=0; j<tasks[i].length; j++) {
+    console.log(`Массив ${i}. Значение ${j}`);
+    }
 }
-console.log(newarr.join(' '));
-console.log(arr.reverse().join(' '));
