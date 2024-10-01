@@ -1,12 +1,15 @@
-// break и continue
-const tasks = ['Задача 1', 'continue','Задача 3','Задача 4','break','Задача 6'];
+// Упражнение - Цикл в обратном порядке
 
+/* Задача вывести в консоль строку "Я люблю JS !" из массива.
+Проходя циклом в обратном порядке не используя метов revrese.
+*/
 
-for(let i=0; i < tasks.length; i++) {
-    if ((tasks[i]) == 'continue') {
-        continue;
-    } else if ((tasks[i]) == 'break') {
-       break; 
-    }
-    console.log(tasks[i]);       
-} 
+const arr = ['!', 'JS', 'люблю', 'Я'];
+
+const newarr = [];
+
+for (i=arr.length-1; i>=0; i--) {
+    newarr.push(arr[i]);
+}
+console.log(newarr.join(' '));
+console.log(arr.reverse().join(' '));
