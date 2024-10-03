@@ -1,36 +1,18 @@
-// // Цикл while
-// let i = 1;
-// while (i<=10) { // Проверка ДО
-//     console.log(`Вывод - ${i}`);
-//     i++;
-// }
+// цилк for of и for in
 
 
-// const arr = [1,4,8,7]
-// let j=0;
-// while (arr[j] <= 5 && j < arr.length) { // Проверка ДО
-//     console.log(arr[j]);
-//     j++;
-// }
-
-// let k = 0;
-// do { // Проверка ПОСЛЕ 1 выполнения
-// console.log(`k - ${k}`)
-// k++
-// } while( k < 0)
+const arr = [[1,2,3,4],[5,6,7,8]];
 
 
+for (let element of arr) { // просто перебрать массив, если индекс не нужен
+   console.log(`тут я вывожу каждое значение массива`);
+   console.log(element);
+   for (let elementOfElement of (element)) {
+      console.log(elementOfElement);
+   }
+}
 
-// 
-console.log('---------------');
 
-const arr2 = [1,4,8,7,12,15,16];
-let q = -1;
-while (q < arr2.length) { // Проверка ДО
-   q++;
-    if (arr2[q] == 8) {
-      console.log('пропустил 8');
-      continue;
-     } 
-     console.log(arr2[q]);
+for (let index in arr) { // вывести индекс
+   console.log(index);
 }
