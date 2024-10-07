@@ -4,6 +4,8 @@ function power(pow) {
     }
 }
 
+
+
 const powerOfTwo = power(2);
 console.log(powerOfTwo(5));
 
@@ -14,3 +16,9 @@ console.log(powerOfThree(5));
 
 
 console.log(power(5)(4));
+
+
+
+
+let abcd = (a,b) => (c,d) => (a+b)*(c+d);
+console.log(abcd(2,2)(1,1));
