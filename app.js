@@ -1,20 +1,16 @@
-function add(a,b) {
-    return a+b;
-}
-function subtract(a,b) {
-    return a-b;
-}
-
-
-function power(a,b) {
-    return a**b;
+function power(pow) {
+    return function(num) {
+        return num**pow;
+    }
 }
 
-function calculate(a,b,fn) {
-    const res = fn(a,b);
-    console.log(fn.name);
-    return res;
-}
-console.log(calculate(3,3,add));
-console.log(calculate(3,3,subtract));
-console.log(calculate(3,2,power));
+const powerOfTwo = power(2);
+console.log(powerOfTwo(5));
+
+
+
+const powerOfThree = power(3);
+console.log(powerOfThree(5));
+
+
+console.log(power(5)(4));
