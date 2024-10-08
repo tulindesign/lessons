@@ -1,19 +1,29 @@
+/* 
+    Написать функцию, которые возвращает true,
+    если элемент есть и false, если нет.
+*/
+const arr = [2,4,4,10,20,30,40,50]
 
-const arr = [1,2,4,4,10,20,30,40,50]
+// function some(array) {
+//     questValue = +(prompt('Поиск по числу'));
 
-let elGT5;
-
-// for (const el of arr) {
-//     if (el > 5) {
-//     elGT5 = el;
-//     break;
+//     if (array.find((element) => element === questValue)) {
+//         return true;
+//     } return false;
 // }
+
+
+// console.log(some(arr));
+
+
+
+
+// function some2(array,element) {
+//     element = +element;
+//     const res = array.find(el => el === element);
+//     return res !== undefined ? true: false;
 // }
+// console.log(some2(arr,prompt('Поиск по числу')));
 
 
-
-elGT5 = arr.find((el) => el  > 5);
-console.log(elGT5);
- 
-elGT5 = arr.findIndex((el) => el  > 5);
-console.log(elGT5);
+console.log(arr.some(el => el === 0));
