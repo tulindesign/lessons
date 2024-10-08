@@ -6,15 +6,20 @@ const progressTasks = [];
 const availableTasks =['Почистить зубы','Умыться','Позавтракать','Поучить JS'];
 const doneTasks = [];
 
-function outputValueWithIndex(array) { // функция нумерации массива
-    let tempArray = [];
-    for (const [index,element] of array.entries()) {
-        tempArray.push(`${index+1}. ${element}`);
-    }
-    return tempArray.join(`
-`);
+// function outputValueWithIndex(array) { // функция нумерации массива
+//     let tempArray = [];
+//     for (const [index,element] of array.entries()) {
+//         tempArray.push(`${index+1}. ${element}`);
+//     }
+//     return tempArray.join(`
+// `);
 
+// }
+
+function outputValueWithIndex(array) { // функция нумерации массива
+    return array.map((arrayEl, i) => `${i + 1}. ${arrayEl}`).join('\n');
 }
+
 
 function showAllTasksCompleteALert() {
 alert(`Вы выполнили все задачи на сегодня:
