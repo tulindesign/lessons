@@ -1,26 +1,15 @@
-const users = ['Вася','Яков','Маша','Катя','Аня', 'Ажга'];
+const arr = [1,2,3,4,5];
 
-users.sort()
-console.log(users);
-//map - новый, sort - старый
+console.log(new Array(1, 2, 3, 4, 5));
 
 
-const operations = [100, -300, -100, 50, 480];
+const arr2 = new Array(5);
+console.log(arr2);
 
 
+arr2.fill(1, 0, 3); // значение, от, до
+console.log(arr2);
 
+const arr3 = Array.from( {length: 5},  (cur, i) => i+1);
 
-operations.sort((a,b) => {
-    if (a > b) {
-        return 1;
-    }
-    if (a < b) {
-        return -1;
-    }
-
-
-});
-
-operations.sort((a,b) => b - a);
-
-console.log(operations);
+console.log(arr3);
