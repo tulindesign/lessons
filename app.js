@@ -1,39 +1,16 @@
-const operations = [100, -20, 7, -20, 50];
-// const positiveOperations = [];
-// const negativeOperations = [];
-// for (const value of operations) {
-//     if (value > 0) {
-//         positiveOperations.push(value);
-//     } else {
-//         negativeOperations.push(value);
-//     }
-// }
-// console.log(positiveOperations);
-// console.log(negativeOperations);
+/*
+    Имеется массив изменения цен prices,
+    где внутри
+    1 элемент - цена в момент X
+    2 элемент - цена в момент Y
 
+    Нужно преобразовать данные в массив, где будут отображены только положительные изменения цен [100,150]
+*/
 
+const prices =[[100,200],[120,100],[200,350]];
 
-const positiveRUBOperations = operations
-    .filter(operation => {
-    return operation > 0;
-    })
-    .map((operation,i) => {
-        return `${i+1}. ${operation*100}`
-    })
-    .join('\n');
+const increasedPrice2 = prices
+    .map(product => product[1] - product[0])
+    .filter(price => price > 0);
 
-    const negativeRUBOperations = operations
-    .filter(operation => {
-    return operation < 0;
-    })
-    .map((operation,i) => {
-        return `${i+1}. ${operation*100}`
-    })
-    .join('\n');
-
-
-console.log(`Доходы:
-${positiveRUBOperations}`);
-    
-console.log(`Расходы:
-${negativeRUBOperations}`);
+console.log(increasedPrice2)
