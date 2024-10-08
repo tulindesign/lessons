@@ -1,5 +1,26 @@
-const prices = [[2,4], [3,4], [10, [20, 50]]];
-const res = prices.flat(10); // сначала flat
-const res2 = prices.flatMap((el,i) => `${i}.${el}`); //сначала map потом flat
-console.log(res);
-console.log(res2);
+const users = ['Вася','Яков','Маша','Катя','Аня', 'Ажга'];
+
+users.sort()
+console.log(users);
+//map - новый, sort - старый
+
+
+const operations = [100, -300, -100, 50, 480];
+
+
+
+
+operations.sort((a,b) => {
+    if (a > b) {
+        return 1;
+    }
+    if (a < b) {
+        return -1;
+    }
+
+
+});
+
+operations.sort((a,b) => b - a);
+
+console.log(operations);
