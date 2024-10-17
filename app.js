@@ -1,20 +1,21 @@
-// Базовые методы
-const userName = 'вася пупкина';
+// Вытащить имя и фамилию в отдельные переменные
 
-function firstLetterToUpperCase (str) {
-  return str
-  .split(' ')
-  .map((item) => item[0].toUpperCase() + item.slice(1));
+const fullUserName = 'Вася aka Terminator Пупкин';
+
+const user = {
+  name: fullUserName.split(' ')[0],
+  secondName: fullUserName.split(' ')[1]
 }
-console.log(firstLetterToUpperCase(userName)); 
-console.log(userName.charAt(0)); 
+console.log(user); 
 
+const userName = fullUserName.slice(
+  0,
+  fullUserName.indexOf(' ')
+);
+const secondName = fullUserName.slice(
+  fullUserName.lastIndexOf(' ')+1,
+  fullUserName.length
+);
 
-console.log(userName.length); 
-console.log(userName.indexOf('уп'));
-console.log(userName.lastIndexOf('а'));
-console.log(userName.includes('а'));
-console.log(userName.slice(5,8));
-
-
+console.log(`${userName} ${secondName}`);
 
