@@ -1,10 +1,16 @@
-// Замаскировать все кроме последних 4х символов *.
+// Знакомство с объектами
 
+const userArray = ['Вася', 'Пупкин', 24]
+const user = {
+  name: 'Вася',
+  surname: 'Пупкин',
+  age: 24,
+  skills: [
+    'Программирование',
+    'Готовка'
+  ],
+  1: 1
+}
 
-const card = '23458234728937428374'; // 20
-
-let hiddenCard = card.slice(-4).padStart(card.length,'*');
-
-console.log(card);
-console.log(hiddenCard);
-
+console.log(userArray);
+console.log(user);
