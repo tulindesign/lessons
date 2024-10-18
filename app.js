@@ -1,30 +1,10 @@
-// Обращение к элементам
+// отсортировать пользователь по возрасту
 
-const user = {
-  name: 'Вася',
-  surname: 'Пупкин',
-  age: 24,
-  skills: [
-    'Программирование',
-    'Готовка'
-  ],
-  1: 1,
-  eduBasic: 'Школа 10',
-  eduPro: 'МФТи'
-}
-
-console.log(user.skills); // не расчетное
-console.log(user['skills']); 
-const level = 'Pro';
-console.log(user['edu' + level]); // если расчетное 
-
-// const res = prompt('Введите свойство');
-// console.log(user[res]);
-
-
-user['city'] = 'Москва'; // создание нового свойства
-
-
-console.log(user); 
-user.age = 30;
-console.log(user); 
+const users = [
+  { name: 'Вася', age:30},
+  { name: 'Катя', age:18},
+  { name: 'Аня', age:40},
+  { name: 'Петя', age:25},
+]
+console.log(users);
+console.log(users.toSorted((a, b) => a.age - b.age));
