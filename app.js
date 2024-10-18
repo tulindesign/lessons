@@ -1,6 +1,5 @@
-// Знакомство с объектами
+// Обращение к элементам
 
-const userArray = ['Вася', 'Пупкин', 24]
 const user = {
   name: 'Вася',
   surname: 'Пупкин',
@@ -9,8 +8,23 @@ const user = {
     'Программирование',
     'Готовка'
   ],
-  1: 1
+  1: 1,
+  eduBasic: 'Школа 10',
+  eduPro: 'МФТи'
 }
 
-console.log(userArray);
-console.log(user);
+console.log(user.skills); // не расчетное
+console.log(user['skills']); 
+const level = 'Pro';
+console.log(user['edu' + level]); // если расчетное 
+
+// const res = prompt('Введите свойство');
+// console.log(user[res]);
+
+
+user['city'] = 'Москва'; // создание нового свойства
+
+
+console.log(user); 
+user.age = 30;
+console.log(user); 
