@@ -1,12 +1,5 @@
-// Строки и массива
-
-const userFullName= 'Вася Пупкин Васильевич';
-console.log(userFullName.split(' '));
-
-const [firstName, familyName, lastName] = userFullName.split(' ');
-console.log(firstName);
-console.log(familyName);
-console.log(lastName);
-
-const arr = ['Ты', 'знаешь', 'JS']
-console.log(arr.join(' '));
+// Дополнение строк
+const film = 'Звездные войны';
+console.log(film.padStart(20,'*'))
+console.log(film.padEnd(20,'*'))
+console.log(film.repeat(10));
