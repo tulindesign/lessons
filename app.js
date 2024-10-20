@@ -1,26 +1,24 @@
-// Итерирование по объекту
+// Деструктуризация и rest
 
-const cities = {
-  msk: {
-    lt: 200,
-    temp: 25
-  },
-  spb: {
-    lt: 100,
-    temp: 20
-  }
+let user = {
+  name: "Вася",
+  secondName: 'Пупкин',
+  age: 30
 }
 
-let sumTemp = 0;
-let citiesCount = Object.keys(cities).length;
+const {age, ... userWithoutAge} = user;
 
-// for (let key in cities) {
-//   sumTemp +=  cities[key].temp;
-// }
+console.log(age);
+console.log(userWithoutAge);
 
 
-for (let key of Object.keys(cities)) {
-  sumTemp +=  cities[key].temp;
+const additionalData = {
+  skills: ['Разработка','Дизайн'],
+  creditCard: '2345-2345-2345-2345'
 }
 
-console.log(sumTemp / citiesCount);
+user = {
+  ...user,
+  ...additionalData
+}
+console.log(user); 
