@@ -1,24 +1,22 @@
-// Деструктуризация и rest
+// Optional chain
 
-let user = {
-  name: "Вася",
-  secondName: 'Пупкин',
-  age: 30
+let cities = {
+  msk: {
+    temp: {
+      celcius: 25,
+      kelvin: 40
+    }
+  },
+  spb: {
+    temp: 25
+  }
 }
 
-const {age, ... userWithoutAge} = user;
 
-console.log(age);
-console.log(userWithoutAge);
+const city = 'msk'
+console.log(cities[city].temp);
 
 
-const additionalData = {
-  skills: ['Разработка','Дизайн'],
-  creditCard: '2345-2345-2345-2345'
-}
 
-user = {
-  ...user,
-  ...additionalData
-}
-console.log(user); 
+
+console.log(cities[city]?.temp?.celcius);
