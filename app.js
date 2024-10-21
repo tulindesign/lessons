@@ -1,36 +1,13 @@
-// ссылки и копирование
+// strict mode
 
-let objA = {
-  date: '09.04.1994',
-  fullName: 'Tulin Timofei Vladimirovich',
-  city: 'Orenburg',
-  objects: [
-    {
-      name:'lol',
-      insideObj: [
-        {
-          name:1
-        },
-        {
-          name:2
-        },
-      ]
-    },
-    {
-      name:'lol2'
-    },
-    {
-      name:'lol3'
-    },
-  ],
+'use strict';
+
+let myCoolVariable = 1;
+
+if (true) {
+  myCoolVariable = 3;
 }
 
-let objB = structuredClone(objA) // все уровни
-let objC = {...objA} // копирует ток первый уровень, все остальное ссылки
-objA.fullName = 'a';
-objA.objects[0].insideObj[0].name = null;
-objA.objects.name = null;
-console.log(objA.objects[0].insideObj[0].name);
+console.log(myCoolVariable);
 
-console.log(objB.objects[0].insideObj[0].name);
-
+const undefined = 8;
