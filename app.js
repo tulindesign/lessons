@@ -1,32 +1,33 @@
 'use strict';
 
-
-function addNumb(num1,num2) {
-  console.log(this);
-  return num1 + num2
-}
-
-const addNumb2 = (num1,num2) => {
-  console.log(this);
-  return num1 + num2
-}
-
-
 const user = {
-  name: 'Вася',
-  surname: 'Пупкин',
-  getFullname: function() {
-    console.log(this);
-    return this.name + ' ' + this.surname;
-  }
+  firstName: 'Вася',
+  lastName: 'Пупкин',
+  age: 20,
+  getUserInfo: function() {
+    console.log(`${this.firstName} ${this.lastName}`);
+
+    const canDrink = () => {
+      return this.age >= 18 ? console.log('может пить'): console.log('Пить не может')
+    }
+    canDrink();
+  },
+  
+  getUserInfoArrow: () => {
+    console.log(`${this.firstName} ${this.lastName}`);
+  },
 }
 
-user.getFullname()
+console.log(user.age2)
+user.getUserInfo();
+user.getUserInfoArrow();
 
-const user2 = { 
-  name: 'Марина',
-  surname: 'Катц',
-}
 
-user2.getFullname = user.getFullname;
-user2.getFullname()
+// this - в стрелочных обращается вне функции на уровень выше
+
+// console.log(
+//   Object.entries(user).reduce((acc,[key]) => {
+//     console.log(user[key]);
+//     acc += this[key];
+//   }, 0)
+// );
