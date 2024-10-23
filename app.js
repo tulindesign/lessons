@@ -1,14 +1,27 @@
 'use strict'
-// IIFE
+// Замыкания
 
-function init() {
-  console.log('Start');
+/* 
+Замыкание - это комбинация функции и лексического окружения, в котором эта функция была определена.
+
+Простыми словами: функция помнит, в каком контексте она была создана и может его использовать
+*/
+
+
+// функция высшенго порядка - функция, которая возвращает другую функцию
+function changeBalance() {
+    let balance = 0;
+    return function(sum) {
+        balance += sum; 
+        console.log(balance);
+    }
 }
-init();
 
-(function() {
-  console.log('Start IIF0');
-  const a = 1;
-})(); //запустится 1 раз, модуль
+const change =  changeBalance();
 
-console.log(a);
+change(100);
+change(-50);
+change(200);
+
+console.dir(change);
+
