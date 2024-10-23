@@ -1,27 +1,39 @@
 'use strict'
-// Замыкания
-
-/* 
-Замыкание - это комбинация функции и лексического окружения, в котором эта функция была определена.
-
-Простыми словами: функция помнит, в каком контексте она была создана и может его использовать
+/*
+    Сделать функцию пользователя, которая берёт за основу userInfo и за счет замыкания создает новый объект, с которым можно работать как user1().increase(100)
 */
 
 
-// функция высшенго порядка - функция, которая возвращает другую функцию
-function changeBalance() {
-    let balance = 0;
-    return function(sum) {
-        balance += sum; 
-        console.log(balance);
+const userInfo = {
+    balance: 0,
+    operations: 0,
+    increase(sum) {
+        this.balance += sum;
+        this.operations++;
     }
 }
 
-const change =  changeBalance();
+function user() {
+    const userObj = {
+        balance: 0,
+        operations: 0,
+        increase(sum) {
+            this.balance += sum;
+            this.operations++;
+        }
+    };
+    return function() {
+        return userObj;
+    }
+}
 
-change(100);
-change(-50);
-change(200);
+const user1 = user();
+user1().increase(100);
+user1().increase(100);
+console.log(user1());
 
-console.dir(change);
 
+const user2 = user();
+
+user2().increase(100);
+console.log(user2());
