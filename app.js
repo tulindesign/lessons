@@ -1,28 +1,23 @@
 'use strict'
-// call, apply
+/*
+  Создайте объект пользователя с паролем.
+  С помощью функции ниже удалить пароль сделав функцию сброса пароля
+*/
 
-const audi = {
-  mark: 'Audi',
-  model: 'A3',
-  year: 2021,
-  damages: [
-
-  ],
-};
-
-const carManipulation = {
-  addDamage(part, rate) {
-    this.damages.push({part, rate})
-    console.log(`Повреждение ${this.mark} ${this.model}: ${part} ${rate}`)
+const user = {
+   firstName: 'Вася',
+   password: 'mypassword',
+   remotePasword(reset) {
+    reset ? this.password = undefined: this.password = '1';
   }
 }
 
-const addDamageAudi = carManipulation.addDamage.bind(audi); //связали с объектом audi
+function remotePasword(reset) {
+  reset ? this.password = undefined: this.password = '1';
+}
 
-addDamageAudi('Крыло',3);
+const resetUserPassword = remotePasword.bind(user, true)
 
 
-const addDamageAudiRoof = carManipulation.addDamage.bind(audi, 'Крыша'); //связали с объектом audi и аргумент part = Крыша
-
-
-addDamageAudiRoof(3);
+resetUserPassword()
+console.log(user);
