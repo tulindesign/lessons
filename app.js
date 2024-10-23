@@ -1,23 +1,14 @@
 'use strict'
-/*
-  Создайте объект пользователя с паролем.
-  С помощью функции ниже удалить пароль сделав функцию сброса пароля
-*/
+// IIFE
 
-const user = {
-   firstName: 'Вася',
-   password: 'mypassword',
-   remotePasword(reset) {
-    reset ? this.password = undefined: this.password = '1';
-  }
+function init() {
+  console.log('Start');
 }
+init();
 
-function remotePasword(reset) {
-  reset ? this.password = undefined: this.password = '1';
-}
+(function() {
+  console.log('Start IIF0');
+  const a = 1;
+})(); //запустится 1 раз, модуль
 
-const resetUserPassword = remotePasword.bind(user, true)
-
-
-resetUserPassword()
-console.log(user);
+console.log(a);
