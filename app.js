@@ -1,39 +1,81 @@
-'use strict'
-/*
-    Сделать функцию пользователя, которая берёт за основу userInfo и за счет замыкания создает новый объект, с которым можно работать как user1().increase(100)
+// https://learn.javascript.ru/constructor-new
+
+/* Задача 1
+Создайте функцию-конструктор Calculator, которая создаёт объекты с тремя методами:
+
+read() запрашивает два значения при помощи prompt и сохраняет их значение в свойствах объекта.
+sum() возвращает сумму этих свойств.
+mul() возвращает произведение этих свойств.
+
 */
 
+let calculator = new Calculator();
 
-const userInfo = {
-    balance: 0,
-    operations: 0,
-    increase(sum) {
-        this.balance += sum;
-        this.operations++;
-    }
-}
-
-function user() {
-    const userObj = {
-        balance: 0,
-        operations: 0,
-        increase(sum) {
-            this.balance += sum;
-            this.operations++;
+function Calculator() {
+    obj = {
+        read(a = prompt('Введите А'), b = prompt('Введите Б')) {
+            this.a = a;
+            this.b = b;
+        },
+        sum() {
+            return +this.a + +this.b
+        },
+        mul() {
+            return +this.a * +this.b
         }
-    };
-    return function() {
-        return userObj;
+    }
+    return obj;
+}
+
+calculator.read();
+
+console.log(calculator)
+console.log( "Sum=" + calculator.sum() );
+console.log( "Mul=" + calculator.mul() );
+
+let calculator2 = new Calculator();
+calculator2.read();
+console.log(calculator2)
+console.log( "Sum=" + calculator2.sum() );
+console.log( "Mul=" + calculator2.mul() );
+
+
+
+/* Задача 2
+
+Создайте функцию-конструктор Accumulator(startingValue).
+
+Объект, который она создаёт, должен уметь следующее:
+
+Хранить «текущее значение» в свойстве value. Начальное значение устанавливается в аргументе конструктора startingValue.
+Метод read() должен использовать prompt для считывания нового числа и прибавления его к value.
+Другими словами, свойство value представляет собой сумму всех введённых пользователем значений, с учётом начального значения startingValue.
+
+Ниже вы можете посмотреть работу кода:
+
+let accumulator = new Accumulator(1); // начальное значение 1
+
+accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+
+alert(accumulator.value); // выведет сумму этих значений
+*/
+
+let accumulator = new Accumulator(1); // начальное значение 1
+
+function Accumulator(startingVal) {
+    this.value = startingVal;
+    this.read = function() {
+        this.value  +=  +prompt('Введите добавляемое значение');;
     }
 }
 
-const user1 = user();
-user1().increase(100);
-user1().increase(100);
-console.log(user1());
+accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+accumulator.read(); 
+accumulator.read(); 
+accumulator.read(); 
+accumulator.read(); 
 
+console.log(accumulator.value); // выведет сумму этих значений
 
-const user2 = user();
-
-user2().increase(100);
-console.log(user2());
+console.log(accumulator);
